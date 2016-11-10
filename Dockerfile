@@ -5,8 +5,7 @@ RUN echo "http://dl-5.alpinelinux.org/alpine/edge/testing" >> /etc/apk/repositor
 	&& apk --update add sphinx \
 	&& mkdir -p /var/lib/sphinx \
 	&& mkdir -p /var/lib/sphinx/data \
-	&& mkdir -p /var/log/sphinx \
-	&& mkdir -p /var/run/sphinx
+	&& mkdir -p /var/log/sphinx 
 
 EXPOSE 9306
 
