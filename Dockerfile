@@ -1,7 +1,5 @@
 FROM alpine:3.3
-MAINTAINER James White <dev.jameswhite@gmail.com>
-
-ADD sphinx.conf /etc/sphinx/sphinx.conf
+MAINTAINER АK <masterforweb@hotmail.com>
 
 RUN echo "http://dl-5.alpinelinux.org/alpine/edge/testing" >> /etc/apk/repositories \
 	&& apk --update add sphinx \
