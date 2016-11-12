@@ -5,8 +5,3 @@ RUN echo "http://dl-cdn.alpinelinux.org/alpine/edge/testing" >> /etc/apk/reposit
   	&& apk --update add sphinx \
   	&& mkdir -p /var/lib/sphinx \
   	&& mkdir -p /var/lib/sphinx/data \
-
-  
- EXPOSE 9306
-  
- CMD searchd --nodetach 
