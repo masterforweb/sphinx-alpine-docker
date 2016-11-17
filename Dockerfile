@@ -8,7 +8,8 @@ RUN echo "http://dl-5.alpinelinux.org/alpine/edge/community" >> /etc/apk/reposit
 	&& mkdir -p /var/log/sphinx \
 	&& mkdir -p /var/run/sphinx 
 
+ADD run.sh /
+
 EXPOSE 9306
 
-RUN indexer --all
-CMD searchd --nodetach
+CMD /searchd.sh
