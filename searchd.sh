@@ -1,3 +1,7 @@
 #!/bin/ash
-indexer --all
-searchd --nodetach
+
+#
+# @author masterforweb
+
+indexer --all "$@"
+searchd
