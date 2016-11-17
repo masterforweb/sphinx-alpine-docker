@@ -3,5 +3,5 @@
 #
 # @author masterforweb
 
-#indexer --all "$@"
+indexer --all --rotate
 searchd
