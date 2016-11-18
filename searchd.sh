@@ -3,5 +3,5 @@
 #
 # @author masterforweb
 
-indexer --all --rotate
-searchd
+indexer --all --rotate "$@"
+exec searchd --nodetach "$@"
