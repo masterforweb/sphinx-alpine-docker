@@ -3,4 +3,4 @@
 # @author masterforweb
 
 indexer --all --rotate "$@"
-. searchd.sh
+searchd.sh
