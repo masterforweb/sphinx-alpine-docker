@@ -17,6 +17,6 @@ RUN echo "http://dl-5.alpinelinux.org/alpine/edge/community" >> /etc/apk/reposit
 	&& indexall.sh
 
 # run the script
-CMD ["searchd.sh"]
+CMD ["/usr/local/etc/searchd.sh"]
 
 
