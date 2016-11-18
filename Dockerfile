@@ -14,7 +14,7 @@ RUN echo "http://dl-5.alpinelinux.org/alpine/edge/community" >> /etc/apk/reposit
 	&& mkdir -p /var/run/sphinx \
 	&& chmod a+x searchd.sh \
 	&& chmod a+x indexall.sh \
-	&& indexall.sh
+	&& ash indexall.sh
 
 # run the script
 CMD ["./searchd.sh"]
