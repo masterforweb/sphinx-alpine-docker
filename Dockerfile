@@ -2,7 +2,7 @@ FROM alpine:3.3
 MAINTAINER Andrey Kuvshinov <masterforweb@hotmail.com>
 
 # add work script
-ADD indexall.sh /
+ADD start.sh /
 ADD searchd.sh /
 
 # install sphinxsearch   
