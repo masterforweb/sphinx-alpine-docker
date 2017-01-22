@@ -13,9 +13,11 @@ RUN echo "http://dl-5.alpinelinux.org/alpine/edge/community" >> /etc/apk/reposit
 	&& mkdir -p /var/log/sphinx \
 	&& mkdir -p /var/run/sphinx \
 	&& chmod a+x searchd.sh \
-	&& chmod a+x indexall.sh 
+	&& chmod a+x indexall.sh \
+	&& crontab -l | { cat; echo "55    00       *       *       *       /indexer.sh > /tmp/indexer.log"; } | crontab -
 
 # run the script
-CMD ["./indexall.sh"]
+CMD ['crond', '&&', './indexall.sh']
+
 
 
