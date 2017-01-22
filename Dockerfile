@@ -4,6 +4,7 @@ MAINTAINER Andrey Kuvshinov <masterforweb@hotmail.com>
 # add work script
 ADD indexall.sh /
 ADD searchd.sh /
+ADD indexer.sh /
 
 # install sphinxsearch   
 RUN echo "http://dl-5.alpinelinux.org/alpine/edge/community" >> /etc/apk/repositories \
@@ -14,10 +15,11 @@ RUN echo "http://dl-5.alpinelinux.org/alpine/edge/community" >> /etc/apk/reposit
 	&& mkdir -p /var/run/sphinx \
 	&& chmod a+x searchd.sh \
 	&& chmod a+x indexall.sh \
-	&& crontab -l | { cat; echo "55    00       *       *       *       /indexer.sh > /tmp/indexer.log"; } | crontab -
+	&& chmod a+x indexer.sh \
+	&& /indexer.sh > /tmp/indexer.log \
+	&& crontab -l | { cat; echo "55    00       *       *       *       /indexer.sh > /tmp/indexer.log"; } | crontab - 
 
-# run the script
-CMD ['crond', '&&', './indexall.sh']
-
+# run cron and seachd
+CMD ['crond', '&&', 'searchd --nodetach "$@"']
 
 
