@@ -19,6 +19,6 @@ RUN echo "http://dl-5.alpinelinux.org/alpine/edge/community" >> /etc/apk/reposit
 	&& crontab -l | { cat; echo "55    00       *       *       *       /indexer.sh > /tmp/indexer.log"; } | crontab -
 
 # run cron and seachd
-CMD ['crond', '&&', 'searchd --nodetach "$@"']
+CMD ['cron', '&&', 'searchd --nodetach "$@"']
 
 
