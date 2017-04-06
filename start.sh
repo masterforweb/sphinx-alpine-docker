@@ -6,7 +6,7 @@
 #crontab -l | { cat; echo "55    00       *       *       *       /indexer.sh > /tmp/indexer.log"; } | crontab -
 
 # start crond
-/usr/sbin/crond -f -L 8
+#/usr/sbin/crond -f -L 8
 
 # start index
 indexer --all --rotate "$@"
